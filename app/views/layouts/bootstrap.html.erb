@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= @controllerName %></title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<%= render 'layouts/navigation' %>
+
+	<div id="main-container" class="container">
+		<div class="row">
+			<div id="sidebar" class="col-xs-3">
+				<!-- sidebar content muestra en el titulo como el nombre del controlador actual esto esta seteado en aplication_controller -->
+				<h5><%= "Controller Name: " + @controllerName %></h5>
+				<h5><%= "Action Name: " + @acctionName %></h5>
+			</div>
+			<div id="content" class="col-xs-9">
+				<!--  main content -->
+				<%= render 'layouts/tabs' %>
+				<%= yield %>        
+			</div>
+		</div>
+	</div>
+</body>
+</html>
