@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
   
   #If you want to do some action before destroy
-  r#be#fore_destroy :some_method
+  #be#fore_destroy :some_method
   #Same, but before restore
   #before_restore :callback_name_goes_here
 

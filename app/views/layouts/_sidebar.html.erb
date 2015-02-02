@@ -1,0 +1,7 @@
+<div id="sidebar" class="col-sm-2 sidebar">
+	<!-- sidebar content muestra en el titulo como el nombre del controlador actual esto esta seteado en aplication_controller -->
+	<ul class="nav nav-sidebar">
+	<li class=<%= @controllerName == "User" ? "active" : "" %>><%= link_to 'Usuarios', users_path %></li>
+	<li class=<%= @controllerName == "Group" ? "active" : "" %>><%= link_to 'Grupos', groups_path%></li>
+	</ul>
+</div>
