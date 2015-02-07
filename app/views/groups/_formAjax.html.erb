@@ -2,6 +2,7 @@
   <div class="field from-group">
     <%= f.label :'nuevo grupo'%>
     <%= f.text_field :name, class: "form-control" %>
+    <%= f.hidden_field(:last_id, :value => @lastOnList.id)%>
     <%= f.submit class:'btn btn-primary'%>
   </div>
 <% end %>

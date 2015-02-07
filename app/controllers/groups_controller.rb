@@ -49,6 +49,7 @@ class GroupsController < ApplicationController
 
   def createAjax
     @group = Group.new(group_params)
+    @appendId = last_params[:last_id]
     @group.save 
     respond_to do |f|
       f.js 
@@ -112,5 +113,8 @@ class GroupsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
       params.require(:group).permit(:name)
+    end
+    def last_params
+      params.require(:group).permit(:last_id)
     end
   end
