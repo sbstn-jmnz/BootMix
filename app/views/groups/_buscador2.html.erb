@@ -1,3 +1,26 @@
-<%= form_tag groups_path, method: "GET", remote: true do %>
+<%= form_tag groups_path, method: "GET" do %>
 <%= text_field_tag :q %>
 <% end %>
+
+<script type="text/javascript">
+$("input[name=q]").on( "input", function(){
+	var search = this.value;
+	if (search.length >=3 || search.length == 0){
+		$.ajax({
+			url: '<%= groups_path %>',
+			type: 'GET',
+			dataType: 'script',
+			data: {q: search},
+		})
+		.done(function() {
+			console.log("success");
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+	}	
+});
+</script>

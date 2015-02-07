@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
     if params[:q]
-    @groups = Group.where(name: params[:q]).includes(:users).paginate(:page => params[:page]) 
+    @groups = Group.where("name like ?", "%#{params[:q]}%").includes(:users).paginate(:page => params[:page]) 
     else
     @groups = Group.all.includes(:users).paginate(:page => params[:page])
     end
