@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+<h1>Listing Toys</h1>
+<ul id="sortable">
+  <%= render @toys %>
+</ul>
+<%= link_to 'New Toy', new_toy_path %>
+<script type="text/javascript">
+$(function(){
+  var first_position;
+  var second_position;
+  $("#sortable").sortable({
+
+    start: function (event,ui){
+      first_position =ui.item.index();
+      console.log(ui.item.index())},
+
+    stop: function (event,ui){
+      second_position = ui.item.index();
+      console.log(ui.item.index());
+
+      $.ajax({
+        url: '<%= move_toys_path%>',
+        type: 'GET',
+        dataType: 'script',
+        data: {first_position: first_position,
+          second_position: second_position}
+      })
+      .done(function() {
+        console.log("success");
+      })
+      .fail(function() {
+        console.log("error");
+      })
+      .always(function() {
+        console.log("complete");
+      });}
+
+    });
+
+  $("#sortable").disableSelection();
+});
+
+</script>

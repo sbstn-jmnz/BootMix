@@ -1,0 +1,11 @@
+<tr id= "group-<%= group.id%>" >
+  <div class="accordion-group">
+    <td class="accordion-heading" data-toggle="collapse" href="#<%= group.id%>"><%= group.name %></td>
+    <td><%= link_to 'Show', group %></td>
+    <td><%= link_to 'Edit', edit_group_path(group) %></td>
+    <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <tr id="<%=group.id%>" class="accordion-inner collapse"><td colspan="5">
+      <%= render 'innerTable', group: group %></td>
+    </tr>
+  </tr>
+</div>

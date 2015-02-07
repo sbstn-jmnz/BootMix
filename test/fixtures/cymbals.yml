@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  family: MyString
+  inches: 1
+  name: MyString
+
+two:
+  type: 
+  family: MyString
+  inches: 1
+  name: MyString

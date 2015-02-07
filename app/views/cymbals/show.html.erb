@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @cymbal.CymbalType %>
+</p>
+
+<p>
+  <strong>Family:</strong>
+  <%= @cymbal.family %>
+</p>
+
+<p>
+  <strong>Inches:</strong>
+  <%= @cymbal.inches %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cymbal.name %>
+</p>
+
+<%= link_to 'Edit', edit_cymbal_path(@cymbal) %> |
+<%= link_to 'Back', cymbals_path %>

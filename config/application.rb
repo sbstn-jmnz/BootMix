@@ -22,5 +22,18 @@ module Myapp
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-  end
+    config.assets.paths << Rails.root.join('app', 'assets', 'audios')
+    #config.action_mailer.delivery_method = :sendmail
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.smtp_settings = {
+        address: "smtp.gmail.com",
+        port: 587,
+        domain: "plastikilo.cl",
+        authentication: "plain",
+        enable_starttls_auto: true,
+        user_name: "sjimenez@plastikilo.cl",
+        password: "654321pla"
+    }
+end
 end

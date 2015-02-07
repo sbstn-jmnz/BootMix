@@ -28,6 +28,11 @@ gem 'autoprefixer-rails'
 
 gem "paranoia", "~> 2.0"
 
+gem 'jquery-ui-sass-rails'
+gem 'acts_as_list'
+gem 'quiet_assets', group: :development
+gem 'will_paginate', '~> 3.0.6'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

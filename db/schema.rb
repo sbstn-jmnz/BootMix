@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131033027) do
+ActiveRecord::Schema.define(version: 20150207010655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,25 @@ ActiveRecord::Schema.define(version: 20150131033027) do
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+
+  create_table "cookies", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "stock"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cymbals", force: :cascade do |t|
+    t.string   "CymbalType"
+    t.string   "family"
+    t.integer  "inches"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "sound"
+    t.string   "image"
+    t.integer  "position"
+  end
 
   create_table "group_users", force: :cascade do |t|
     t.integer  "user_id"
@@ -55,11 +74,20 @@ ActiveRecord::Schema.define(version: 20150131033027) do
     t.datetime "updated_at"
   end
 
+  create_table "toys", force: :cascade do |t|
+    t.string   "name"
+    t.string   "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "position"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "deleted_at", null: false
+    t.string   "email"
   end
 
   add_index "users", ["deleted_at"], name: "index_users_on_deleted_at", using: :btree

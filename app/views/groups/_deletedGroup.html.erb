@@ -1,0 +1,7 @@
+<tr>
+	<td><%= deletedGroup.name %></td>
+   	<td><%= link_to 'Show', deletedGroup %></td>
+   	<td><%= link_to 'Edit', edit_group_path(deletedGroup) %></td>
+    <td><%= link_to 'Restore', restore_group_path(deletedGroup.id), :method => :patch %></td>
+    <td><%= link_to 'Really Destroy', reallyDestroy_group_path(deletedGroup.id), :method => :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

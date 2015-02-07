@@ -10,8 +10,10 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.all.includes(:users).paginate(:page => params[:page])
+    @lastOnList = @groups.last
     @deletedGroups = Group.only_deleted
+    @group = Group.new
   end
 
   # GET /groups/1
@@ -32,7 +34,6 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @group = Group.new(group_params)
-
     respond_to do |format|
       if @group.save
         flash[:success] = 'Todo was successfully created.'
@@ -43,6 +44,14 @@ class GroupsController < ApplicationController
         format.html { render :new }
         format.json { render json: @group.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def createAjax
+    @group = Group.new(group_params)
+    @group.save 
+    respond_to do |f|
+      f.js 
     end
   end
 
@@ -77,11 +86,20 @@ class GroupsController < ApplicationController
     respond_to do |format|
       if Group.with_deleted.find(params[:id]).restore(:recursive => true)
         flash[:success] = "Group restored successfully" 
-        format.html { redirect_to users_url }
+        format.html { redirect_to groups_url }
       else
         flash[:danger] = "There was a problem restoring the User" 
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: @group.errors, status: :unprocessable_entity }
       end  
+    end
+  end
+
+  def reallyDestroy
+    Group.with_deleted.find(params[:id]).really_destroy!
+    respond_to do |format|
+      flash[:success] = "Group realy destroyed successfully" 
+      format.html { redirect_to groups_url }
+      format.json { head :no_content }
     end
   end
 

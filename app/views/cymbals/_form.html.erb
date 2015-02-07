@@ -1,0 +1,41 @@
+<%= form_for(@cymbal) do |f| %>
+  <% if @cymbal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cymbal.errors.count, "error") %> prohibited this cymbal from being saved:</h2>
+
+      <ul>
+      <% @cymbal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :CymbalType %>
+  </div>
+  <div class="field">
+    <%= f.label :family %><br>
+    <%= f.text_field :family %>
+  </div>
+  <div class="field">
+    <%= f.label :inches %><br>
+    <%= f.number_field :inches %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :sound %><br>
+    <%= f.text_field :sound %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
