@@ -10,10 +10,19 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
+    if params[:q]
+    @groups = Group.where(name: params[:q]).includes(:users).paginate(:page => params[:page]) 
+    else
     @groups = Group.all.includes(:users).paginate(:page => params[:page])
-    @lastOnList = @groups.last
+    end
+    @lastOnList = @groups.size > 0? @groups.last : Group.new 
     @deletedGroups = Group.only_deleted
     @group = Group.new
+    
+    respond_to do |f|
+      f.html
+      f.js
+    end
   end
 
   # GET /groups/1

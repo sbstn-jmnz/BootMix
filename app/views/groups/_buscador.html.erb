@@ -1,6 +1,7 @@
+
+
 <%= form_for(Group.new, url:'groups/createAjax.js', :html => {:class => "form-inline"}, remote: true ) do |f| %>
   <div class="field from-group">
     <%= f.text_field :name, class: "form-control", id: "datepicker" %>
   </div>
 <% end %>
-
