@@ -1,0 +1,10 @@
+<%= simple_form_for @task do |f|   %>
+  <%= f.input  :description, as: :text           %>
+  <%= f.input  :deadline,    as: :datetimepicker %>
+  <%= f.button :submit %>
+<% end %>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#datetimepicker1').datetimepicker();
+});
+</script>

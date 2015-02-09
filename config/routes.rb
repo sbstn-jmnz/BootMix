@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tasks
+
   resources :cymbals do 
     collection do
       get :move
@@ -26,7 +28,7 @@ Rails.application.routes.draw do
 
   post 'groups/createAjax' => 'groups#createAjax'
 
-  resources :users, only: [:index, :create, :destroy, :edit, :new] do
+  resources :users, only: [:index, :create, :destroy, :edit, :new, :show] do
     member do
       patch :restore
       delete :reallyDestroy

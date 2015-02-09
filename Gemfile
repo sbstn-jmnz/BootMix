@@ -32,7 +32,10 @@ gem 'jquery-ui-sass-rails'
 gem 'acts_as_list'
 gem 'quiet_assets', group: :development
 gem 'will_paginate', '~> 3.0.6'
-
+gem 'responders', '~> 2.0'
+gem 'simple_form'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
