@@ -1,0 +1,2 @@
+$('#posts').html("<%= escape_javascript(render @posts) %>");
+$('#comment-form-<%= @comment.post.id %>').slideUp(350);

@@ -1,0 +1,8 @@
+<div class="well">
+<%= simple_form_for @post, remote: true do |f|   %>
+  <%= f.input  :title, as: :string           %>
+  <%= f.input  :content, as: :text           %>
+  <%= f.input  :created_at,    as: :datetimepicker %>
+  <%= f.button :submit,  class: "btn btn-primary"  %>
+<% end %>
+</div>

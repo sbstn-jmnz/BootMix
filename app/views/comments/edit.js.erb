@@ -1,0 +1,2 @@
+$('#comment-form-<%= @comment.post.id %>').html("<%= escape_javascript(render 'formAjax') %>");
+$('#comment-form-<%= @comment.post.id %>').slideDown(350);

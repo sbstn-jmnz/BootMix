@@ -17,14 +17,15 @@ ActiveRecord::Schema.define(version: 20150207212650) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.string   "commenter",  limit: 255
-    t.text     "body"
+    t.string   "content"
     t.integer  "post_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "cookies", force: :cascade do |t|
     t.string   "name"
@@ -67,12 +68,14 @@ ActiveRecord::Schema.define(version: 20150207212650) do
   add_index "groups", ["deleted_at"], name: "index_groups_on_deleted_at", using: :btree
 
   create_table "posts", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "title",      limit: 255
+    t.string   "title"
     t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "tasks", force: :cascade do |t|
     t.string   "description"

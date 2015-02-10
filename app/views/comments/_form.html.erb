@@ -1,0 +1,9 @@
+<%= form_for([comment.post, comment], remote: true) do |f| %>
+<div class="field form-group">
+    <%= f.label :content, "Agregar Comentario" %><br>
+    <%= f.text_area :content, class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Add Comment", class: 'btn btn-primary' %>
+  </div>
+<% end %>
