@@ -1,8 +1,12 @@
 <% post.comments.each do |c| %>
-<li class="list-group-item"><%= c.content + " Por: " %>
-<%= link_to("Edit",edit_post_comment_path(post,c), remote: true) %>
-<%= link_to "Delete",post_comment_path(post,c), remote: true, method: :delete, data: { confirm: 'Are you sure?'} %>
+<li class="list-group-item"><%= c.content + " Por: " + c.user.name %>
+	<% if can? :update, c %>	
+	<%= link_to("Edit",edit_post_comment_path(post,c), remote: true) %>
+	<%end %>
+	<% if can? :update, c%>
+	<%= link_to "Delete",post_comment_path(post,c), remote: true, method: :delete, data: { confirm: 'Are you sure?'} %>
 </li>
+<%end %>
 <% end %>
 
 

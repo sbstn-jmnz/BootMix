@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
     @posts = Post.all
+    @comment.user = current_user
     @comment.save
   end 
 
@@ -22,7 +23,8 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    @comment.destroy
+    @post = Post.find(params[:post_id])
+    @comment =@post.comments.find(params[:id]).destroy
     @posts = Post.all
   end
   
@@ -32,7 +34,7 @@ class CommentsController < ApplicationController
   private
 
   def all_comments
-    @comments = Comment.all
+    @comments = Comment.all.includes(:users)
   end
 
   def set_comments
