@@ -76,14 +76,12 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = { :host => 'fast-everglades-4393.herokuapp.com' }
   config.action_mailer.smtp_settings = {
         address: "smtp.mandrillapp.com",
         port: 25,
-        domain: "sbstn.jmnz@yahoo.com",
-        authentication: "plain",
+        domain: "fast-everglades-4393.herokuapp.com",
+        authentication: "login",
         enable_starttls_auto: true,
         user_name: ENV["EMAIL"],
         password: ENV["PASSWORD"]
