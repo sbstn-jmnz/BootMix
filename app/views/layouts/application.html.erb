@@ -1,37 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><%= @controllerName %></title>
+	<title>Restorant</title>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
+<style>
+body {
+	background:url(<%=asset_path '1.jpg'%>) left top;
+	background-size: 100%;
+}
+</style>
 <body>
-	<div class="site-wrapper">
-		<div class="site-wrapper-inner">
-			<div class="cover-container">
-				<div class="masthead clearfix">
-					<div class="inner">
-						<h3 class="masthead-brand">My Fisrt Rails App</h3>
-						<nav>
-							<ul class="nav masthead-nav">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">Features</a></li>
-								<li><a href="#">Contact</a></li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-				<h1 class="cover-heading">Log In.</h1>
-				<%= yield %>
-				</div>
-				<div class="mastfoot">
-					<div class="inner">
-						<p>BootCamp 2015 <a href="http://www.desafiolatam.com/">Bootstrap</a>, by <a href="http://www.sbstn-jmnz.cl">@Sbstn</a>.</p>
-					</div>
-				</div>
-			</div>
+	<div id="main-container" class="container">
+		<div class="row">
+			<%= yield %>
 		</div>
+	</div>
 </div>
 </body>
 </html>

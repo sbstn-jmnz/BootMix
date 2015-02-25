@@ -30,8 +30,8 @@ module Myapp
         domain: "plastikilo.cl",
         authentication: "plain",
         enable_starttls_auto: true,
-        user_name: "sjimenez@plastikilo.cl",
-        password: "654321pla"
+        user_name: ENV["EMAIL"],
+        password: ENV["PASSWORD"]
     }
 end
 end

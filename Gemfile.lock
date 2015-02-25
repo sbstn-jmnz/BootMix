@@ -73,6 +73,9 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dotenv (1.0.2)
+    dotenv-rails (1.0.2)
+      dotenv (= 1.0.2)
     erubis (2.7.0)
     execjs (2.2.2)
     globalid (0.3.0)
@@ -205,6 +208,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   cowsay
   devise
+  dotenv-rails
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-sass-rails
