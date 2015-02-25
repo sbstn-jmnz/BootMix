@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150225022115) do
+ActiveRecord::Schema.define(version: 20150225145431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,22 @@ ActiveRecord::Schema.define(version: 20150225022115) do
   end
 
   add_index "groups", ["deleted_at"], name: "index_groups_on_deleted_at", using: :btree
+
+  create_table "parties", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "starts_at"
+    t.boolean  "openbar"
+    t.string   "dress_code"
+    t.string   "string"
+    t.text     "description"
+    t.string   "disco_tweet"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "photo"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"

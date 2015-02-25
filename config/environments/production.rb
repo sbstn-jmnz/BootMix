@@ -79,9 +79,9 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => 'fast-everglades-4393.herokuapp.com' }
   config.action_mailer.smtp_settings = {
-        address: "smtp.gmail.com",
-        port: 587,
-        domain: "plastikilo.cl",
+        address: "smtp.mandrillapp.com",
+        port: 25,
+        domain: "sbstn.jmnz@yahoo.com",
         authentication: "plain",
         enable_starttls_auto: true,
         user_name: ENV["EMAIL"],

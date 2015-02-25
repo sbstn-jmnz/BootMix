@@ -31,7 +31,6 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'responders', '~> 2.0'
 gem 'simple_form'
 gem 'momentjs-rails', '>= 2.9.0'
-gem 'rails_12factor'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -39,9 +38,10 @@ gem 'devise'
 gem 'cancan'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails_12factor', group: :production
+gem 'geocoder'
+gem 'gmaps4rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

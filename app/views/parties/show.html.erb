@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @party.name %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @party.address %>
+</p>
+<p>
+  <strong>Latitude:</strong>
+  <%= @party.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @party.longitude %>
+</p>
+
+<p>
+  <strong>Starts at:</strong>
+  <%= @party.starts_at %>
+</p>
+
+<p>
+  <strong>Openbar:</strong>
+  <%= @party.openbar %>
+</p>
+
+<p>
+  <strong>Dress code:</strong>
+  <%= @party.dress_code %>
+</p>
+
+<p>
+  <strong>String:</strong>
+  <%= @party.string %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @party.description %>
+</p>
+
+<p>
+  <strong>Disco tweet:</strong>
+  <%= @party.disco_tweet %>
+</p>
+
+<%= link_to 'Edit', edit_party_path(@party) %> |
+<%= link_to 'Back', parties_path %>
