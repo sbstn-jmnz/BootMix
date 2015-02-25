@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
   #If you want to do some action before destroy
   #be#fore_destroy :some_method
   #Same, but before restore

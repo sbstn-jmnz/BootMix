@@ -35,6 +35,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'cancan'
+gem 'dotenv-rails', :groups => [:development, :test]
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  root 'home#dashboard'
-  get 'home/index'
-  match "users/dashboard" => "home#dashboard", via: [:get, :post]
+  resources :applicants
 
-
+  root 'users#index'
+  get 'homes/index'
+ 
   devise_for :users
   patch 'users/:id' => 'users#update'
+  get 'users/dashboard' => 'users#index'
   resources :tasks
 
   resources :cymbals do 

@@ -18,7 +18,8 @@ class ApplicationController < ActionController::Base
   end
   #Where to go after sign out
   def after_sign_out_path_for(user)
-    home_path
+    #Revisar, debe haber una mejor forma de redireccionar al formulario de ingreso
+    posts_path
   end
 
 end
