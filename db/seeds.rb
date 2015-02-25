@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 ##Es el nombre del modelo, no se la tabla ni del controlador. DEL MODELO"
-User.create!(name:'Rocco', deleted_at: DateTime.new(0))
-User.create!(name:'Jenna', deleted_at: DateTime.new(0))
-User.create!(name:'Anna', deleted_at: DateTime.new(0))
+
+User.create :name => "admin", :email => "admin@example.com", :password => "password", 
+:role =>"admin"
 
 Group.create(name: 'HardRock', deleted_at: DateTime.new(0))
 Group.create(name: 'HeavyMetal', deleted_at: DateTime.new(0))
