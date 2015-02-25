@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :applicants
 
-  root 'users#index'
+  root 'posts#index'
   get 'homes/index'
  
   devise_for :users
