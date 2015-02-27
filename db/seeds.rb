@@ -8,8 +8,11 @@
 
 ##Es el nombre del modelo, no se la tabla ni del controlador. DEL MODELO"
 
-User.create :name => "admin", :email => "admin@example.com", :password => "password", 
-:role =>"admin"
+Party.create :name => "De la muerte", :address => "Bartolo Soto 3990, San Miguel, Santiago, Chile"
+Party.create :name => "Del Terror", :address => "Tristan Matta 1251, San Miguel, Santiago, Chile"
+
+User.create :name => "admin", :email => "admin@example.com", :password => "password", :role =>"admin"
+User.create :name => "Sbstn", :email => "sbstn.jmnz@yahoo.com", :password => "654321", :role =>"admin"
 
 Group.create(name: 'HardRock', deleted_at: DateTime.new(0))
 Group.create(name: 'HeavyMetal', deleted_at: DateTime.new(0))
