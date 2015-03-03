@@ -21,6 +21,15 @@ module Myapp
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.paths << Rails.root.join('app', 'assets', 'audios')
+    config.action_mailer.smtp_settings = {
+        address: "smtp.mandrillapp.com",
+        port: 25,
+        domain: "fast-everglades-4393.herokuapp.com",
+        authentication: "login",
+        enable_starttls_auto: true,
+        user_name: ENV["EMAIL"],
+        password: ENV["PASSWORD"]
+    }
     
 end
 end
